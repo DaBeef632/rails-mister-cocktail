@@ -1,0 +1,9 @@
+<h1>Cocktails#index</h1>
+<p>Find me in app/views/cocktails/index.html.erb</p>
+<% @cocktails.each do |cocktail| %>
+<%= link_to cocktail.name, cocktail_path(cocktail[:id]) %>
+<%= link_to "edit cocktail", edit_cocktail_path(cocktail.id) %>
+<%= link_to "Add a new dose", new_cocktail_dose_path(cocktail.id) %>
+<%= button_to "delete", cocktail_path(cocktail.id), method: :delete, data: {confirm: "Are you sure?"}%>
+<% end %>
+<%= link_to "Add a new cocktail", new_cocktail_path %>
